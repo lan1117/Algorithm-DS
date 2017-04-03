@@ -15,13 +15,13 @@ public class lowestCommonAncestor {
 			this.left = this.right = null;
 		}
 	}
-	public TreeNode lowestCommonAncestor(TreeNode root, TreeNode A, TreeNode B){
+	public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode A, TreeNode B){
 		if(root == null || root == A || root == B){
 			return root;
 		}
 		//divide
-		TreeNode left = lowestCommonAncestor(root.left, A, B);
-		TreeNode right = lowestCommonAncestor(root.right, A, B);
+		TreeNode left = lowestCommonAncestor1(root.left, A, B);
+		TreeNode right = lowestCommonAncestor1(root.right, A, B);
 		
 		//conquer
 		if(left != null && right != null){
